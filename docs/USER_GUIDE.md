@@ -2,7 +2,7 @@
 
 ## 安装
 
-1. 下载 Release 中的 `AI社交秘书-*-安装包.zip`，在资源管理器里右键「全部解压缩」；
+1. 下载 Release 中的 `SocialSecretary-v0.2.5-beta-installer.zip`（安装版）或 `SocialSecretary-v0.2.5-beta-portable.zip`（便携版），在资源管理器里右键「全部解压缩」；
 2. 双击解压目录中的 `安装.cmd`；
 3. 不需要管理员权限，不需要安装 Python；
 4. 也可下载便携版，解压后直接双击 `SocialSecretary.exe`。

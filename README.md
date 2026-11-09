@@ -43,9 +43,10 @@ QQ chat reading is experimental: messages may be missed or duplicated, and there
 
 ## 下载与安装
 
-1. 打开 [Releases](https://github.com/stellaris580/social-secretary/releases) 页面，下载最新实验版本的：
-   - `AI社交秘书-*-安装包.zip`
-   - 或 `AI社交秘书-*-便携版.zip`
+1. 打开 [Releases](https://github.com/stellaris580/social-secretary/releases) 页面，下载最新实验版本：
+   - 安装版：[SocialSecretary-v0.2.5-beta-installer.zip](https://github.com/stellaris580/social-secretary/releases/download/v0.2.5-beta/SocialSecretary-v0.2.5-beta-installer.zip)
+   - 免安装便携版：[SocialSecretary-v0.2.5-beta-portable.zip](https://github.com/stellaris580/social-secretary/releases/download/v0.2.5-beta/SocialSecretary-v0.2.5-beta-portable.zip)
+   - 校验：[SHA256SUMS-v0.2.5-beta.txt](https://github.com/stellaris580/social-secretary/releases/download/v0.2.5-beta/SHA256SUMS-v0.2.5-beta.txt)
 2. 解压后双击 `安装.cmd`（安装版）或 `SocialSecretary.exe`（便携版）。
 3. 不需要管理员权限，不需要单独安装 Python。
 4. 首次使用请按应用内说明完成 QQ 邮箱授权和 QQ 会话选择；这些必须由你本人完成。
