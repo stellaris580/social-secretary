@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+.venv-*/
+.uv-cache/
+
+# Local runtime data, evidence and secrets
+evidence/
+*.db
+*.db-wal
+*.db-shm
+*.log
+logs/
+.env
+.env.*
+*.pem
+*.key
+secrets/
+private/
+reference/
+.tmp/
+.tmp*/
+pytest-cache-files-*/
+
+# Build artifacts
+dist/
+build/
+*.spec.bak
+*.exe
+!tools/bin/*.exe
+
+# Test/live local data
+acceptance-data/
+.acceptance-data/
+*.local.*

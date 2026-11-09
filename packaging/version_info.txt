@@ -1,0 +1,38 @@
+﻿# PyInstaller Windows 版本资源（VSVersionInfo）
+# 说明：
+# - 语言 2052 = 简体中文，代码页 1200 = Unicode，StringTable 键为 "080404B0"。
+# - 产品名用中文，内部名/原始文件名用 ASCII，避免杀软/资源解析问题。
+# - 由 packaging/social_secretary.spec 引用（version=...）。
+VSVersionInfo(
+    ffi=FixedFileInfo(
+        filevers=(0, 1, 0, 0),
+        prodvers=(0, 1, 0, 0),
+        mask=0x3F,
+        flags=0x0,
+        OS=0x40004,
+        fileType=0x1,
+        subtype=0x0,
+        date=(0, 0),
+    ),
+    kids=[
+        StringFileInfo(
+            [
+                StringTable(
+                    "080404B0",
+                    [
+                        StringStruct("CompanyName", "SocialSecretary Project"),
+                        StringStruct("FileDescription", "AI 社交秘书（只读消息整合助手）"),
+                        StringStruct("FileVersion", "0.2.5"),
+                        StringStruct("InternalName", "SocialSecretary"),
+                        StringStruct("LegalCopyright", "Copyright (C) 2026 SocialSecretary Project"),
+                        StringStruct("OriginalFilename", "SocialSecretary.exe"),
+                        StringStruct("ProductName", "AI 社交秘书"),
+                        StringStruct("ProductVersion", "0.2.5"),
+                        StringStruct("Comments", "只读整合 QQ 与 QQ 邮箱，不发送任何消息。"),
+                    ],
+                )
+            ]
+        ),
+        VarFileInfo([VarStruct("Translation", [2052, 1200])]),
+    ],
+)

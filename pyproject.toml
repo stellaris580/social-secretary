@@ -1,0 +1,37 @@
+[project]
+name = "social-secretary"
+version = "0.2.5"
+description = "Privacy-first Windows 11 desktop assistant for organizing QQ chats and QQ Mail (read-only)."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+dependencies = [
+    "uiautomation>=2.0.29",
+    "keyring>=25.0",
+    "pywin32>=306",
+    "cryptography>=43.0",
+    "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pyinstaller>=6.0",
+]
+
+[project.scripts]
+social-secretary = "social_secretary.app:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+markers = [
+    "real_machine: requires a real logged-in QQ client / real network account",
+    "ui: Tkinter UI tests (no Qt/pytest-qt required)",
+    "slow: long-running tests",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"

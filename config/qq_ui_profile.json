@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "description": "QQ NT 9.9.35 UIA 选择器基线。类名来源：reference/qq-operations（MIT）已审计结论 + 本机只读探针校准。升级 QQ 后请重新运行 tools/qq_probe.py 并更新本文件。",
+  "qq": {
+    "process_names": ["QQ"],
+    "exe_path": "D:\\QQ.exe",
+    "baseline_version": "9.9.35.52892",
+    "baseline_date": "2026-09-11",
+    "notes": "仅使用官方 UI Automation 只读接口；不读本地数据库、不使用非官方协议、不修改客户端文件。"
+  },
+  "windows": {
+    "panel_title_pattern": "^QQ$",
+    "min_window_size": 60,
+    "max_scan_windows": 40
+  },
+  "mode_toggle": {
+    "class_pattern": "narrow-toggler",
+    "efficiency_hint": "经典",
+    "classic_hint": "效率"
+  },
+  "modes": {
+    "classic": {
+      "bubble_class_pattern": "^message-container",
+      "bubble_exclude_class_patterns": ["__content", "__wrapper", "__inner", "message-container__"],
+      "self_class_pattern": "container--self",
+      "text_control_types": ["Text"],
+      "sender_class_patterns": [
+        "message-container__sender",
+        "msg-content-container__sender",
+        "sender-name",
+        "nickname"
+      ],
+      "time_class_patterns": [
+        "message-container__time",
+        "msg-content-container__time",
+        "time-divider",
+        "time-label"
+      ],
+      "msg_area_class_pattern": "chat-msg-area",
+      "header_class_pattern": "chat-header__contact-name",
+      "editor_class_pattern": "qq-msg-editor|ExEditor-qq-msg-editor",
+      "search_box": {
+        "control_type": "Edit",
+        "exclude_class_patterns": ["qq-msg-editor", "ExEditor", "ProseMirror"],
+        "prefer_topmost": true
+      },
+      "search_result": {
+        "control_types": ["ListItem"],
+        "class_patterns": []
+      },
+      "text_join": ""
+    },
+    "efficiency": {
+      "bubble_class_pattern": "^msg-content-container",
+      "bubble_exclude_class_patterns": ["__content", "__wrapper", "__inner", "msg-content-container__"],
+      "self_class_pattern": "container--self",
+      "text_control_types": ["Text"],
+      "sender_class_patterns": [
+        "msg-content-container__sender",
+        "message-container__sender",
+        "sender-name",
+        "nickname"
+      ],
+      "time_class_patterns": [
+        "msg-content-container__time",
+        "message-container__time",
+        "time-divider",
+        "time-label"
+      ],
+      "msg_area_class_pattern": "chat-msg-area",
+      "header_class_pattern": "chat-header__contact-name",
+      "editor_class_pattern": "qq-msg-editor|ExEditor-qq-msg-editor",
+      "search_box": {
+        "control_type": "Edit",
+        "exclude_class_patterns": ["qq-msg-editor", "ExEditor", "ProseMirror"],
+        "prefer_topmost": true
+      },
+      "search_result": {
+        "control_types": ["ListItem"],
+        "class_patterns": []
+      },
+      "text_join": ""
+    }
+  },
+  "behavior": {
+    "foreground_ack_required": true,
+    "default_mode": "classic",
+    "self_label": "我",
+    "unknown_sender_label": "未知成员",
+    "clipboard_fallback_enabled": true,
+    "scroll_notches_per_pass": 3,
+    "scroll_wait_ms": 450,
+    "max_scroll_passes": 40,
+    "max_stale_passes": 2,
+    "max_messages_hard_cap": 500,
+    "open_chat_timeout_ms": 8000,
+    "search_result_timeout_ms": 4000,
+    "poll_interval_ms": 250,
+    "revive_tree_wait_ms": 800,
+    "activate_attempts": 4,
+    "restore_attempts": 3,
+    "wheel_interval_ms": 60,
+    "text_time_future_tolerance_seconds": 120,
+    "active_chat_header_wait_attempts": 8,
+    "min_tree_nodes": 8,
+    "tree_ready_attempts": 6,
+    "panel_ready_attempts": 3
+  },
+  "probe": {
+    "max_depth": 24,
+    "max_nodes": 6000,
+    "include_names_by_default": false,
+    "activate_by_default": false
+  },
+  "safety": {
+    "read_only": true,
+    "send_capability": "none",
+    "forbidden_actions": [
+      "向 qq-msg-editor 消息编辑框输入或粘贴文本",
+      "点击发送按钮",
+      "使用 QQ 非官方协议或读取本地消息数据库",
+      "修改 QQ 客户端文件或联系人"
+    ],
+    "allowed_actions": [
+      "枚举 QQ 进程与顶层窗口",
+      "只读 UIA 控件树（类名/控件类型/名称长度/矩形/子节点）",
+      "在消息区滚动鼠标滚轮读取视口内消息",
+      "在主面板搜索框写入待读会话名（白名单内的会话）",
+      "短暂占用前台窗口并在读取结束后恢复原前台窗口"
+    ]
+  }
+}

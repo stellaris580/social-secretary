@@ -1,0 +1,43 @@
+name: Bug report
+description: Report a reproducible bug without private data
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **不要在这里粘贴 QQ 聊天记录、邮件正文、邮箱授权码、API Key、私人截图或用户数据库。**
+        如涉及安全问题，请按 SECURITY.md 私下报告。
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: 只描述现象、步骤和脱敏错误信息，不要包含私人内容。
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Release 版本或提交哈希
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - QQ chat (experimental)
+        - QQ Mail
+        - UI / summary / todo / draft
+        - Installer / uninstaller
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs (optional)
+      description: 请先删除聊天正文、邮箱/QQ 账号、授权码、API Key、本机用户名和私人路径。
+      render: text

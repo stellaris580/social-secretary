@@ -1,0 +1,32 @@
+AI 社交秘书（SocialSecretary）第三方组件与许可声明
+==================================================
+
+本程序是面向 Windows 11 的**只读**社交消息整合助手：只读取 QQ / QQ 邮箱中用户
+明确授权的会话，生成摘要、分类、待办与回复草稿；**不包含发送 QQ 消息、发送邮件、
+修改联系人、删除远端消息的任何能力**。
+
+主要第三方组件
+--------------
+| 组件 | 用途 | 许可 |
+|---|---|---|
+| Tkinter / Tcl/Tk（Python 标准库） | 桌面界面（**Tkinter**，不依赖 Qt） | PSF License / Tcl/Tk License |
+| uiautomation | Windows UI Automation 只读读取（仅 QQ 采集 worker 子进程） | Apache License 2.0 |
+| comtypes | uiautomation 的 COM 依赖（仅 worker 子进程） | MIT License |
+| pywin32 | Windows API 绑定（进程/窗口/剪贴板） | Python Software Foundation License |
+| keyring | Windows 凭据管理器访问 | MIT License |
+| cryptography | 凭据加密/安全原语 | Apache License 2.0 / BSD 3-Clause |
+| Pillow | 图标生成（构建期） | HPND License |
+
+
+构建/安装工具
+-------------
+- PyInstaller（构建期，GPL with exception）
+- Inno Setup（安装包编译期，Inno Setup License，允许自由分发编译出的安装包）
+
+隐私与数据
+----------
+- 聊天/邮件只保存在本机 SQLite 数据库；邮箱授权码与 API Key 只存 Windows 凭据管理器。
+- 默认不联网；外部 AI 功能默认关闭，需用户在设置中逐项显式同意后才会上传当前单条消息。
+- 日志只记录元数据（计数/耗时/错误码），不记录消息正文与凭据。
+
+本项目不包含来自腾讯/QQ 的代码，也不使用任何 QQ 非官方协议。

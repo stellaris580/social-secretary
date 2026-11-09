@@ -1,0 +1,5 @@
+uiautomation>=2.0.29
+keyring>=25.0
+pywin32>=306
+cryptography>=43.0
+Pillow>=10.0
